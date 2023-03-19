@@ -33,15 +33,15 @@ export function EditShopping({
 
   if (!disabled)
     return (
-      <div className="flex justify-center items-center space-x-4">
+      <div className="flex flex-wrap justify-center items-center">
         <input
           type="text"
-          className="rounded-lg border-2 border-gray-600 bg-gray-150"
+          className="rounded-lg border-2 border-gray-600 bg-gray-150 mb-4 md:mb-0"
           ref={inputItemRef}
           onChange={handleInputChange}
           maxLength={40}
         />
-        <div className="flex space-x-6">
+        <div className="flex justify-around mb-4 md:mb-0 2xl:mt-0 w-full md:w-auto space-x-2">
           <div onClick={handleSave}>
             <ButtonAction action="save" />
           </div>
@@ -53,7 +53,7 @@ export function EditShopping({
     );
 
   return (
-    <div className="flex justify-center items-center space-x-4">
+    <div className="flex flex-wrap justify-center items-center space-x-4">
       <div onClick={handleEdit}>
         <ButtonAction action="edit" />
       </div>

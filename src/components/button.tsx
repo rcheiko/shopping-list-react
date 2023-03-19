@@ -7,7 +7,7 @@ export function ButtonAction({ action, disabled = "false" }: ButtonActionProps )
 
   if (disabled === "true") return (
     <div className="flex justify-center items-center space-x-4">
-      <button className="bg-gray-500 text-white font-bold py-1 px-4 rounded cursor-not-allowed">
+      <button className="bg-gray-500 text-white font-bold py-1 px-4 rounded-lg cursor-not-allowed">
         {action}
       </button>
     </div>
@@ -15,7 +15,7 @@ export function ButtonAction({ action, disabled = "false" }: ButtonActionProps )
 
   else if (action === "save") return (
     <div className="flex justify-center items-center space-x-4">
-      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded">
+      <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-4 rounded-lg">
         {action}
       </button>
     </div>
@@ -23,7 +23,7 @@ export function ButtonAction({ action, disabled = "false" }: ButtonActionProps )
 
   else if (action === "cancel") return (
     <div className="flex justify-center items-center space-x-4">
-      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded">
+      <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-4 rounded-lg">
         {action}
       </button>
     </div>
@@ -31,7 +31,7 @@ export function ButtonAction({ action, disabled = "false" }: ButtonActionProps )
 
   return (
     <div className="flex justify-center items-center space-x-4">
-      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded-lg">
         {action}
       </button>
     </div>
