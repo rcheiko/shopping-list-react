@@ -1,8 +1,7 @@
-export default function Root(props:any) {
-
+export default function Root(props: any) {
   return (
-    <div className="p-32">
-      {props.children}
+    <div>
+      <div className="p-28 bg-gray-700 h-screen">{props.children}</div>
     </div>
   );
 }

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { AddShoppingCard } from "../components/AddShopping";
-import { ButtonAction } from "../components/button";
 import { DeleteShoppingCard } from "../components/DeleteShopping";
 import { EditShopping } from "../components/EditShopping";
 import Root from "../layout/root";
@@ -9,27 +8,25 @@ import { getShoppingList } from "../utils/Shopping";
 export default function Home() {
   const [items, setItems] = useState(getShoppingList());
 
-  const deleteItem = (index: number) => () => {
-    const newItems = [...items];
-    newItems.splice(index, 1);
-    localStorage.setItem("shoppingList", JSON.stringify(newItems));
-    setItems(newItems);
-  };
-
   return (
     <>
       <Root>
-        <div>
+        <div className="flex flex-col justify-center items-center rounded-xl border border-gray-700 bg-gray-800 p-4 mx-auto w-1/2 overflow-hidden">
           <AddShoppingCard setItems={setItems} />
 
-          {items.map((elem, index) => (
-            <div key={index} className="flex justify-center items-center space-x-8 py-2">
-              <div>{elem}</div>
-              <EditShopping index={index} setItems={setItems}  />
-              <DeleteShoppingCard index={index} setItems={setItems} />
-            </div>
-          ))}
-
+          <ul className="mt-4 space-y-2">
+            {items.map((elem, index) => (
+              <li key={index}>
+                <div className="flex justify-center items-center space-x-6 rounded-lg border border-gray-700 py-4 px-8 mb-4">
+                  <p className="text-gray-100">{elem}</p>
+                  <div className="flex space-x-6">
+                    <EditShopping index={index} setItems={setItems} />
+                    <DeleteShoppingCard index={index} setItems={setItems} />
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
         </div>
       </Root>
     </>

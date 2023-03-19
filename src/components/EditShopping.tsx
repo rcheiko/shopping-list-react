@@ -36,9 +36,10 @@ export function EditShopping({
       <div className="flex justify-center items-center space-x-4">
         <input
           type="text"
-          className="border-2 border-gray-300 rounded-md"
+          className="rounded-lg border-2 border-gray-600 bg-gray-150"
           ref={inputItemRef}
           onChange={handleInputChange}
+          maxLength={40}
         />
         <div className="flex space-x-6">
           <div onClick={handleSave}>

@@ -13,41 +13,49 @@ export function AddShoppingCard({ setItems }: { setItems: Function }) {
 
   if (!inputItem)
     return (
-      <div>
-        <form className="flex justify-center items-center space-x-2">
-          <label htmlFor="shoppingList">Add to shopping list</label>
-          <input
-            type="text"
-            id="shoppingList"
-            ref={inputItemRef}
-            onChange={handleInputChange}
-            className="border-2 border-gray-300 rounded-md"
-          />
-          <div>
-            <ButtonAction action="add" disabled="true" />
-          </div>
-        </form>
-      </div>
-    );
-
-  return (
-    <div>
-      <form
-        onSubmit={(event) => addShopping(inputItem, setItems, event)}
-        className="flex justify-center items-center space-x-2"
-      >
-        <label htmlFor="shoppingList">Add to shopping list</label>
+      <form className="flex justify-center items-center space-x-2 my-6">
+        <label
+          htmlFor="shoppingList"
+          className="text-lg font-medium text-gray-100"
+        >
+          Add to shopping list
+        </label>
         <input
           type="text"
           id="shoppingList"
           ref={inputItemRef}
           onChange={handleInputChange}
           className="border-2 border-gray-300 rounded-md"
+          maxLength={40}
         />
         <div>
-          <ButtonAction action="add" />
+          <ButtonAction action="add" disabled="true" />
         </div>
       </form>
-    </div>
+    );
+
+  return (
+    <form
+      onSubmit={(event) => addShopping(inputItem, inputItemRef, setInputItem, setItems, event)}
+      className="flex justify-center items-center space-x-2 my-6"
+    >
+      <label
+        htmlFor="shoppingList"
+        className="text-lg font-medium text-gray-100"
+      >
+        Add to shopping list
+      </label>
+      <input
+        type="text"
+        id="shoppingList"
+        ref={inputItemRef}
+        onChange={handleInputChange}
+        className="border-2 border-gray-300 rounded-md"
+        maxLength={40}
+      />
+      <div>
+        <ButtonAction action="add" />
+      </div>
+    </form>
   );
 }
