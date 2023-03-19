@@ -13,7 +13,10 @@ export function AddShoppingCard({ setItems }: { setItems: Function }) {
 
   if (!inputItem)
     return (
-      <form onSubmit={(e) => e.preventDefault()} className="flex flex-wrap justify-center items-center space-x-2 my-6">
+      <form
+        onSubmit={(e) => e.preventDefault()}
+        className="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-center items-center space-x-2 my-6"
+      >
         <label
           htmlFor="shoppingList"
           className="text-lg font-medium text-gray-100"
@@ -36,8 +39,10 @@ export function AddShoppingCard({ setItems }: { setItems: Function }) {
 
   return (
     <form
-      onSubmit={(event) => addShopping(inputItem, inputItemRef, setInputItem, setItems, event)}
-      className="flex flex-wrap justify-center items-center space-x-2 my-6"
+      onSubmit={(event) =>
+        addShopping(inputItem, inputItemRef, setInputItem, setItems, event)
+      }
+      className="flex flex-col md:flex-row space-y-2 md:space-y-0 justify-center items-center space-x-2 my-6"
     >
       <label
         htmlFor="shoppingList"
