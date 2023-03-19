@@ -1,4 +1,5 @@
-export function addShopping (Items: string, setItems: Function) {
+export function addShopping (Items: string, setItems: Function, event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
     const items = getShoppingList()
     items.push(Items)
     localStorage.setItem('shoppingList', JSON.stringify(items));

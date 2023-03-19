@@ -31,7 +31,7 @@ export function ButtonAction({ action, disabled = "false" }: ButtonActionProps )
 
   return (
     <div className="flex justify-center items-center space-x-4">
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
+      <button type="submit" className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-4 rounded">
         {action}
       </button>
     </div>

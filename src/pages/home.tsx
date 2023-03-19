@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { AddShoppingCard } from "../components/AddShopping";
 import { ButtonAction } from "../components/button";
+import { DeleteShoppingCard } from "../components/DeleteShopping";
 import { EditShopping } from "../components/EditShopping";
 import Root from "../layout/root";
 import { getShoppingList } from "../utils/Shopping";
@@ -25,9 +26,7 @@ export default function Home() {
             <div key={index} className="flex justify-center items-center space-x-8 py-2">
               <div>{elem}</div>
               <EditShopping index={index} setItems={setItems}  />
-              <div onClick={deleteItem(index)}>
-                <ButtonAction action="delete" />
-              </div>
+              <DeleteShoppingCard index={index} setItems={setItems} />
             </div>
           ))}
 
